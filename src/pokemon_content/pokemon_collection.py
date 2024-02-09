@@ -80,7 +80,7 @@ class PokemonCollection(Collection):
         card.visual_description = get_visual_description(card)
 
         # Generate a name for the card.
-        if gpt_client().is_openai_enabled:
+        if gpt_client().enabled:
             card.name = generate_card_name(card, self.card_names_seen)
             card.description = generate_desc(card)
 
